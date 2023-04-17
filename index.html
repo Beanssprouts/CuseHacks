@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jane Bot</title>
+    <style>
+        .chat {
+            border: 20px solid #e79796;
+            height: 400px;
+            padding: 10px;
+            overflow-y: scroll;
+            margin-top: 25px; /* add margin-top */
+        }
+        .response {
+            color: #6983ce;
+        }
+        .pink {
+            color: pink;
+        }
+        .input-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px; /* add margin-top */
+        }
+        .chatbot-name {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+        body {
+        background-color: #f9e5d7 ;
+    }
+    </style>
+</head>
+<body>
+    <div class="chatbot-name">Jane Bot</div>
+    <div class="chat" id="chat">
+        <p>Hello! My name is JaneBot! Ask me anything...</p>
+    </div>
+    <div class="input-container">
+        <input type="text" id="input" placeholder="Enter message...">
+        <button onclick="sendMessage()">↑</button>
+    </div>
+
+    <script>
+        var messages = [];
+        var lastResponseMessage = "";
+
+        function sendMessage() {
+    var input = document.getElementById("input");
+    var message = input.value;
+    if (message.toLowerCase() === "hello" || message.toLowerCase() === "hi" || message.toLowerCase() === "hey" || message.toLowerCase() === "hello!" || message.toLowerCase() === "hi janebot"|| message.toLowerCase() === "hello janebot" || message.toLowerCase() === "hey janebot") {
+        messages.push({content: "Hello!", isResponse: true});
+        lastResponseMessage = "Hello!";
+    }
+    else if (message.toLowerCase() === "how are you doing today" || message.toLowerCase() === "how are you today" || message.toLowerCase() === "how are you" || message.toLowerCase() === "how are you doing today?") {
+        messages.push({content: "great :) how are you?", isResponse: true});
+        lastResponseMessage = "great :) how are you?";
+    }
+    else if (lastResponseMessage && lastResponseMessage.toLowerCase() === "great :) how are you?") {
+        messages.push({content: "That's so great to hear!", isResponse: true});
+        lastResponseMessage = "That's so great to hear!";
+    }
+    else if (message.toLowerCase() === "how old are you") {
+        messages.push({content: "I'm an AI chatbot, I don't have an age!", isResponse: true});
+        lastResponseMessage = "I'm an AI chatbot, I don't have an age!";
+    }
+
+    else if (message.toLowerCase() === "make me feel better" || message.toLowerCase() === "cheer me up") {
+        messages.push({content: "say: 'I want to play a game'", isResponse: true});
+        lastResponseMessage = "say: I want to play a game'";
+    }
+
+    else if (message.toLowerCase() === "i am having a bad day" || message.toLowerCase() === "i dont feel so good today" || message.toLowerCase() === "I dont feel well today" || message.toLowerCase() === "i do not feel well today" || message.toLowerCase() === "I do not feel well" || message.toLowerCase() === "i am sad" || message.toLowerCase() === "im sad") {
+    messages.push({content: "I am so sorry to hear that! It's okay to feel this way sometimes, and it's important to take care of yourself during these times.Here are some things you can try to help improve your mood Take a break: Sometimes, taking a short break from what you're doing can help you feel refreshed and refocused. Try stepping away from your current activity and doing something else that you enjoy, such as reading a book, taking a walk, or listening to music. Talk to someone: It can be helpful to talk to someone you trust about what's bothering you. This can be a friend, family member, or a mental health professional if you need more support. Practice self-care: Engage in activities that make you feel good, such as taking a relaxing bath, practicing yoga, or cooking a favorite meal. Self-care is an essential part of maintaining good mental health. Challenge negative thoughts: Try to identify any negative thoughts you may be having and challenge them. Ask yourself if they are realistic or if there is evidence to support them. Remember, it's okay to have bad days, and it's important to take care of yourself during these times. If you're feeling overwhelmed or need additional support, don't hesitate to reach out to a mental health professional. \n alternatively, try the 'tell me a joke' function :) ", isResponse: true});
+    lastResponseMessage = "I am so sorry to hear that! It's okay to feel this way sometimes, and it's important to take care of yourself during these times.Here are some things you can try to help improve your mood Take a break: Sometimes, taking a short break from what you're doing can help you feel refreshed and refocused. Try stepping away from your current activity and doing something else that you enjoy, such as reading a book, taking a walk, or listening to music. Talk to someone: It can be helpful to talk to someone you trust about what's bothering you. This can be a friend, family member, or a mental health professional if you need more support. Practice self-care: Engage in activities that make you feel good, such as taking a relaxing bath, practicing yoga, or cooking a favorite meal. Self-care is an essential part of maintaining good mental health. Challenge negative thoughts: Try to identify any negative thoughts you may be having and challenge them. Ask yourself if they are realistic or if there is evidence to support them. Remember, it's okay to have bad days, and it's important to take care of yourself during these times. If you're feeling overwhelmed or need additional support, don't hesitate to reach out to a mental health professional. \n alternatively, try the 'tell me a joke' function :) ";
+    } 
+
+    else if (message.toLowerCase() === "i want to play a game" || message.toLowerCase() === "lets play a game") {
+    messages.push({content: "Sure, let's play a game!", isResponse: true});
+    lastResponseMessage = "Sure, let's play a game!";
+    window.open("https://643c850d47e74134068ceb01--fabulous-tulumba-d4f5d1.netlify.app", "_blank");
+}
+    
+    else if (message.toLowerCase() === "what is your favorite color") {
+        messages.push({content: "pink :)", isPink: true});
+        lastResponseMessage = "pink :)";
+       
+    }
+    else if (message.toLowerCase() === "tell me a joke") {
+        messages.push({content: "why do chicken coops only have two doors?", isResponse: true});
+        lastResponseMessage = "why do chicken coops only have two doors?";
+            }
+    else if (lastResponseMessage && lastResponseMessage.toLowerCase() === "why do chicken coops only have two doors?" && message.toLowerCase() === "why" || message.toLowerCase() === "why?" ) {
+        messages.push({content: "Because if they had four, they'd be a chicken sedan!", isResponse: true});
+        lastResponseMessage = "Because if they had four, they'd be a chicken sedan!";
+    }
+    else if (message.toLowerCase() === "meow" || message.toLowerCase() === "meow :3") {
+        messages.push({content: "meow :3", isResponse: true});
+        lastResponseMessage = "meow :3";
+    }
+    else if (message.toLowerCase() === "what time is it right now" || message.toLowerCase() === "what time is it" || message.toLowerCase() === "what time is it currently"
+    || message.toLowerCase() === "whats the time" || message.toLowerCase() === "what is the time" || message.toLowerCase() === "tell me the time"){
+        var now = new Date();
+        var timeString = now.toLocaleTimeString();
+        messages.push({content: "The current time is " + timeString, isResponse: true});
+        lastResponseMessage = "The current time is " + timeString;
+    
+    }
+    else if (message.toLowerCase() === "what is the weather like" || message.toLowerCase() === "what is the weather currently" || message.toLowerCase() === "what is the temperature outside" || message.toLowerCase() === "how hot is it right now" ||
+    message.toLowerCase() === "whats the weather right now" || message.toLowerCase() === "whats the weather like right now" || message.toLowerCase() === "whats the weather like") {
+        messages.push({content: "for the current weather and temperature, you can visit : https://weather.com and search for your city", isResponse: true});
+        lastResponseMessage = "for the current weather and temperature, you can visit : https://weather.com and search for your city";
+    }
+    else {
+        messages.push({content: message, isResponse: false, isPink: false});
+    }
+    input.value = "";
+    updateChat();
+}
+
+        function updateChat() {
+            var chat = document.getElementById("chat");
+            var list = document.createElement("ul");
+            for (var i = 0; i < messages.length; i++) {
+                var message = messages[i];
+                var node = document.createElement("li");
+                if (message.isResponse && message.content) { 
+                    node.classList.add("response");
+                }
+                else if (message.isPink && message.content) {
+                    node.classList.add("pink")
+                }
+                var textnode = document.createTextNode(message.content);
+                node.appendChild(textnode);
+                list.appendChild(node);
+            }
+            chat.innerHTML = "";
+            chat.appendChild(list);
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- else if (message.toLowerCase() === "i am having a bad day" || message.toLowerCase() === "i dont feel so good today" || message.toLowerCase() === "I dont feel well today" || message.toLowerCase() === "i do not feel well today" || message.toLowerCase() === "I do not feel well" || message.toLowerCase() === "i am sad" || message.toLowerCase() === "im sad") {
+    messages.push({content: "I am so sorry to hear that! It's okay to feel this way sometimes, and it's important to take care of yourself during these times.Here are some things you can try to help improve your mood Take a break: Sometimes, taking a short break from what you're doing can help you feel refreshed and refocused. Try stepping away from your current activity and doing something else that you enjoy, such as reading a book, taking a walk, or listening to music. Talk to someone: It can be helpful to talk to someone you trust about what's bothering you. This can be a friend, family member, or a mental health professional if you need more support. Practice self-care: Engage in activities that make you feel good, such as taking a relaxing bath, practicing yoga, or cooking a favorite meal. Self-care is an essential part of maintaining good mental health. Challenge negative thoughts: Try to identify any negative thoughts you may be having and challenge them. Ask yourself if they are realistic or if there is evidence to support them. Remember, it's okay to have bad days, and it's important to take care of yourself during these times. If you're feeling overwhelmed or need additional support, don't hesitate to reach out to a mental health professional. \n alternatively, try the 'tell me a joke' function :) ", isResponse: true});
+    lastResponseMessage = "I am so sorry to hear that! It's okay to feel this way sometimes, and it's important to take care of yourself during these times.Here are some things you can try to help improve your mood Take a break: Sometimes, taking a short break from what you're doing can help you feel refreshed and refocused. Try stepping away from your current activity and doing something else that you enjoy, such as reading a book, taking a walk, or listening to music. Talk to someone: It can be helpful to talk to someone you trust about what's bothering you. This can be a friend, family member, or a mental health professional if you need more support. Practice self-care: Engage in activities that make you feel good, such as taking a relaxing bath, practicing yoga, or cooking a favorite meal. Self-care is an essential part of maintaining good mental health. Challenge negative thoughts: Try to identify any negative thoughts you may be having and challenge them. Ask yourself if they are realistic or if there is evidence to support them. Remember, it's okay to have bad days, and it's important to take care of yourself during these times. If you're feeling overwhelmed or need additional support, don't hesitate to reach out to a mental health professional. \n alternatively, try the 'tell me a joke' function :) ";
+   
+} -->
